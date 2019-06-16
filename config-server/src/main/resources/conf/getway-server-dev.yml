@@ -1,0 +1,13 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:6001/eureka/
+
+server:
+  port: 6004
+spring:
+  application:
+    name: getway-server
+
+hello: getway-server is 6003, version is 1.0
+  

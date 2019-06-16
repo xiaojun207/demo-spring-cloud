@@ -1,0 +1,18 @@
+server:
+  port: 6002
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:6001/eureka/
+spring:
+  application:
+    name: config-server                     #指定了配置文件的应用名
+  profiles:
+    active: native
+  cloud:
+    config:
+      server:
+        native:
+          searchLocations: classpath:conf # 相对地址可能有问题
+
+
