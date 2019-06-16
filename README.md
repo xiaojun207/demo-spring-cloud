@@ -11,7 +11,7 @@ config-server
 * 配置中心，根据目前项目特点，使用的是本地配置，而非git（程序运行环境与git环境不通）等方式；
 
 # 3、路由
-getway-server
+gateway-server
 
 # 4、应用1
 client-service
