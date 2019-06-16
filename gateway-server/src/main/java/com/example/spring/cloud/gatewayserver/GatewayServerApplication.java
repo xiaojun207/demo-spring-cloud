@@ -1,13 +1,13 @@
-package com.example.spring.cloud.getwayserver;
+package com.example.spring.cloud.gatewayserver;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class GetwayServerApplication {
+public class GatewayServerApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(GetwayServerApplication.class, args);
+        SpringApplication.run(GatewayServerApplication.class, args);
     }
 
 }

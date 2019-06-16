@@ -7,7 +7,7 @@ server:
   port: 6004
 spring:
   application:
-    name: getway-server
+    name: gateway-server
 
-hello: getway-server is 6003, version is 1.0
+hello: gateway-server is 6003, version is 1.0
   
