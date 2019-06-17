@@ -1,5 +1,5 @@
 # demo-spring-cloud
->this is a spring cloud demo，demo中spring boot 2.x
+>this is a spring cloud demo，demo中spring boot 2.x。该demo为学习记录，如果还有人能从中受益，那就再好不过了。
 
 
 # 1、注册中心
