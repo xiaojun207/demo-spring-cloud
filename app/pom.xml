@@ -7,6 +7,7 @@
         <artifactId>demo-spring-cloud</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
+
     <groupId>com.example.spring.cloud</groupId>
     <artifactId>app</artifactId>
     <version>0.0.1-SNAPSHOT</version>
