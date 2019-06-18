@@ -14,5 +14,5 @@ spring:
       server:
         native:
           searchLocations: classpath:conf # 相对地址可能有问题
-
-
+encrypt:
+  key: Abc123

@@ -9,5 +9,6 @@ spring:
   application:
     name: app
 
-hello: app is 6102, version is 1.0
-  
+hello: '{cipher}b3f095de7b0d18488fa8120c1b2d711dffbd8fb5cc5b4bc425e1920c77ed17160ec0d8c0781f0f87899457c18660d1929a2feb84154cbe87b48c2a16394f7e1517046aa5ea28dbad7d040d33843d982e'
+# app is 6102, version is 1.0
+
