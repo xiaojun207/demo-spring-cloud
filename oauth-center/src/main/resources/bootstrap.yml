@@ -4,7 +4,7 @@ eureka:
       defaultZone: http://localhost:6001/eureka/
 spring:
   application:
-    name: gateway-server                     #指定了配置文件的应用名
+    name: oauth-center                     #指定了配置文件的应用名
   cloud:
     config:
       #      uri: http://localhost:7001/    #Config server的uri
@@ -13,3 +13,13 @@ spring:
       discovery:
         enabled: true                     #开启配置服务发现
         serviceId: config-server        #配置中心服务名
+
+management:
+  security:
+    enabled: false     #SpringBoot 1.5.X 以上默认开通了安全认证，如果不关闭会要求权限
+
+feign:
+  hystrix:
+    enabled: true # 激活斷路器
+  httpclient:
+    enabled: true
