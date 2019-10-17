@@ -3,7 +3,7 @@
 
 
 # 1、注册中心
-eureka-server，使用简单。
+eureka-server，使用简单。增加了密码校验功能
 
 # 2、配置中心
 config-server
