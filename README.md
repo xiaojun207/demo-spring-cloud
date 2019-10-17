@@ -3,7 +3,7 @@
 
 
 # 1、注册中心
-eureka-server
+eureka-server，使用简单。
 
 # 2、配置中心
 config-server
@@ -11,7 +11,7 @@ config-server
 * 配置中心，根据目前项目特点，使用的是本地配置，而非git（程序运行环境与git环境不通）等方式；
 
 # 3、路由
-gateway-server
+gateway-server，新一代微服路由选择
 
 # 4、应用1
 client-service
