@@ -17,14 +17,14 @@ public class HelloController {
     @Value("${hello}")
     String hello;
 
-    @RequestMapping("/hello")
+    @RequestMapping("/test/1")
     public String Hello() {
-        return helloService.getHelloContent();
+        return "test:" + helloService.getHelloContent();
     }
 
-    @RequestMapping("/hello2")
+    @RequestMapping("/test/2")
     public String Hello2() {
-        return helloFeignService.sayHello();
+        return "test:" + helloFeignService.sayHello();
     }
 
 

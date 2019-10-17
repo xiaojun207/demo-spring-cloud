@@ -1,49 +1,59 @@
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:6001/eureka/
+      defaultZone: http://appuser:1122233aaaaa@localhost:8761/eureka/
+
+hello: gateway-server is 6004, version is 1.0
 
 server:
   port: 6004
+
 spring:
   application:
     name: gateway-server
 
-hello: gateway-server is 6004, version is 1.0
+  zipkin:
+    base-url: http://localhost:9411/
+  sleuth:
+    sampler:
+      probability: 1.0
 
+  cloud:
 
-  gateway: # 网关配置
-    discovery:      #是否与服务发现组件进行结合，通过 serviceId(必须设置成大写) 转发到具体的服务实例。默认为false，设为true便开启通过服务中心的自动根据 serviceId 创建路由的功能。
-      locator:      #路由访问方式：http://Gateway_HOST:Gateway_PORT/serviceId/**，其中微服务应用名默认大写访问。
-        enabled: true
-        lower-case-service-id: true
-    routes:
-      # 路由到本机的9000端口上
-      - id: hello_route
-        uri: lb://app
-        predicates:
-          - Path=/hello2
-        filters:
-          - StripPrefix=1
-        # 集成eureka注册中心的配置示例
-      - id: hello_ribbon_route
-        uri: lb://client-service
-        predicates:
-          - Path=/hello
-        filters:
-          - StripPrefix=1
-        # 路由到百度页面
-      - id: baidu_route
-        uri: http://www.baidu.com
-        predicates:
-          - Path=/baidu/**
-        filters:
-          - StripPrefix=1
-            #      - id: ORDER-SERVICE           #网关路由到订单服务order-service
-            #        uri: lb://ORDER-SERVICE
-            #        predicates:
-            #          - Path=/ORDER-SERVICE/**
-            #      - id: USER-SERVICE            #网关路由到用户服务user-service
-          #        uri: lb://USER-SERVICE
-          #        predicates:
-          #
+    gateway: # 网关配置
+      discovery:      #是否与服务发现组件进行结合，通过 serviceId(必须设置成大写) 转发到具体的服务实例。默认为false，设为true便开启通过服务中心的自动根据 serviceId 创建路由的功能。
+        locator:      #路由访问方式：http://Gateway_HOST:Gateway_PORT/serviceId/**，其中微服务应用名默认大写访问。
+          enabled: true
+          lower-case-service-id: true
+      routes:
+        # 路由到本机的9000端口上
+        - id: app_route
+          uri: lb://app
+          predicates:
+            - Path=/test/**
+          filters:
+            - StripPrefix=0
+
+          # 集成eureka注册中心的配置示例
+        - id: client_route
+          uri: lb://client-service
+          predicates:
+            - Path=/client/**
+          filters:
+            - StripPrefix=0
+          # 路由到百度页面
+        - id: baidu_route
+          uri: http://www.baidu.com
+          predicates:
+            - Path=/baidu/**
+          filters:
+            - StripPrefix=1
+
+        - id: user_center_route
+          uri: lb://user-center
+          predicates:
+            - Path=/user/**
+        - id: oauth_center_route
+          uri: lb://oauth-center
+          predicates:
+            - Path=/auth/**

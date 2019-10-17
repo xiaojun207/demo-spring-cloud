@@ -1,7 +1,15 @@
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:6001/eureka/
+      defaultZone: http://appuser:1122233aaaaa@localhost:8761/eureka/
+
+logging:
+  level:
+    org.springframework.cloud.gateway: trace
+    org.springframework.http.server.reactive: debug
+    org.springframework.web.reactive: debug
+    reactor.ipc.netty: debug
+
 spring:
   application:
     name: gateway-server                     #指定了配置文件的应用名

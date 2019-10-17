@@ -3,7 +3,7 @@ server:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:6001/eureka/
+      defaultZone: http://appuser:1122233aaaaa@localhost:8761/eureka/
 spring:
   application:
     name: config-server                     #指定了配置文件的应用名
@@ -14,5 +14,13 @@ spring:
       server:
         native:
           searchLocations: classpath:conf # 相对地址可能有问题
+
+  zipkin:
+    base-url: http://localhost:9411/
+  sleuth:
+    sampler:
+      probability: 1.0
+
+
 encrypt:
   key: Abc123
